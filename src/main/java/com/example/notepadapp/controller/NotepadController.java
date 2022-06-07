@@ -27,7 +27,7 @@ public class NotepadController {
     @DeleteMapping(path = "/removeNote")
     public ResponseEntity<?> removeNote(@RequestParam Long noteId) {
         service.removeNote(noteId);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping(path = "/addNote")
@@ -36,9 +36,9 @@ public class NotepadController {
     }
 
     @PutMapping(path = "/editNote")
-    public ResponseEntity<Long> editNote(@RequestBody EditNoteDto editoteDto) {
+    public ResponseEntity<?> editNote(@RequestBody EditNoteDto editoteDto) {
         service.editNote(editoteDto);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping(path = "/getNoteById")

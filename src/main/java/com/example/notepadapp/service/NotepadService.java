@@ -31,6 +31,7 @@ public class NotepadService {
                 .title(noteDto.getTitle())
                 .body(noteDto.getBody())
                 .creationDate(LocalDateTime.now())
+                .priority(noteDto.isPriority())
                 .build();
         return repository.addNote(noteEntity);
     }
@@ -40,7 +41,6 @@ public class NotepadService {
                 .noteId(editNoteDto.getNoteId())
                 .title(editNoteDto.getTitle())
                 .body(editNoteDto.getBody())
-                .creationDate(LocalDateTime.now())
                 .build();
         repository.updateNote(noteEntity);
     }
