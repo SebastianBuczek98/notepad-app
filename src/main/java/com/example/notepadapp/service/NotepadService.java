@@ -41,6 +41,7 @@ public class NotepadService {
                 .noteId(editNoteDto.getNoteId())
                 .title(editNoteDto.getTitle())
                 .body(editNoteDto.getBody())
+                .priority(editNoteDto.isPriority())
                 .build();
         repository.updateNote(noteEntity);
     }

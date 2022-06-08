@@ -29,6 +29,7 @@ public class NotepadRepository {
 
     public void updateNote(NoteEntity noteEntity) {
         NoteEntity oldNoteEntity = getNoteById(noteEntity.getNoteId());
+        noteEntity.setCreationDate(oldNoteEntity.getCreationDate());
         notesList.set(notesList.indexOf(oldNoteEntity), noteEntity);
     }
 
